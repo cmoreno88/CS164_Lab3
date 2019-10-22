@@ -1,5 +1,4 @@
-#include <Winsock2.h>
-//#include <sys/socket.h>
+#include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <stdio.h>
@@ -37,7 +36,7 @@ int main(void)
       return -1;
   }
 
-
+//connfd = accept(listenfd, (struct sockaddr*)NULL ,NULL);
   while(1)
     {
 
@@ -46,9 +45,11 @@ int main(void)
 //  	memset(recvBuff, '0', sizeof(recvBuff));
 //}
    while((n = read(connfd, recvBuff, sizeof(recvBuff)-1)) > 0){
-//	recvBuff[n] = 0;
-	printf("%s", recvBuff);
-      //strcpy(sendBuff, "Message from server33");
+//	read(connfd, recvBuff, sizeof(recvBuff)-1);
+	recvBuff[n] = '\0';
+	printf("%s\n", recvBuff);
+//	printf("\n");      
+//strcpy(sendBuff, "Message from server33");
       //write(connfd, sendBuff, strlen(sendBuff));
       //close(connfd);
       //sleep(1);

@@ -1,7 +1,6 @@
-#include <Winsock2.h>
-//#include <sys/socket.h>
-//#include <sys/types.h>
-//#include <netinet/in.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+#include <netinet/in.h>
 #include <netdb.h>
 #include <stdio.h>
 #include <string.h>
@@ -35,7 +34,7 @@ int main(int argc,char *argv[])
     }
   memset(sendBuff, '0' ,sizeof(sendBuff));
 while(1){
-//  memset(sendBuff, '0' ,sizeof(sendBuff));
+  //memset(sendBuff, '0' ,sizeof(sendBuff));
 strcpy(sendBuff, argv[1]);//just change hi to argv[1]
 write(sockfd, sendBuff, strlen(sendBuff));
 close(sockfd);
